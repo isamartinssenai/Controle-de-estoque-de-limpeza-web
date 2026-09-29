@@ -41,13 +41,17 @@ $(document).ready(function () {
                     }).then((result) => {
 
                         if (result.isConfirmed) {
-
-                            // Vai para a página /inicio
                             window.location.href = '/inicio';
-
                         }
 
                     });
+
+                    // alert("Token: " + response['token']);
+                    $.cookie("token_usuario", response['token'], { expires: 7, path:'/'});
+
+                    setTimeout(function () {
+                        window.location.href = '/inicio';
+                    }, 2000);
 
                 } else {
 
