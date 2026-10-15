@@ -858,56 +858,6 @@
                     </div>
 
 
-                    <!-- QUANTIDADE -->
-
-                    <div class="col-md-3">
-
-                        <label
-                            for="quantidade"
-                            class="form-label"
-                        >
-                            Quantidade
-                        </label>
-
-                        <input
-                            type="number"
-                            id="quantidade"
-                            name="quantidade"
-                            class="form-control"
-                            placeholder="Ex.: 20"
-                            min="0"
-                            value="0"
-                            required
-                        >
-
-                    </div>
-
-
-                    <!-- ESTOQUE MÍNIMO -->
-
-                    <div class="col-md-3">
-
-                        <label
-                            for="estoque_minimo"
-                            class="form-label"
-                        >
-                            Estoque mínimo
-                        </label>
-
-                        <input
-                            type="number"
-                            id="estoque_minimo"
-                            name="estoque_minimo"
-                            class="form-control"
-                            placeholder="Ex.: 5"
-                            min="0"
-                            value="0"
-                            required
-                        >
-
-                    </div>
-
-
                     <!-- VALIDADE -->
 
                     <div class="col-md-6">

@@ -1,34 +1,30 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
 
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Produtos - Controle de estoque</title>
 
     <!-- Bootstrap -->
-
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
 
     <!-- Bootstrap Icons -->
-
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     >
 
     <!-- jQuery -->
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <!-- JavaScript da página -->
-
     @vite('resources/js/produto.js')
 
 
@@ -52,7 +48,6 @@
         ===================================== */
 
         body {
-
             font-family: Arial, Helvetica, sans-serif;
 
             background: linear-gradient(
@@ -65,7 +60,6 @@
             );
 
             background-size: 400% 400%;
-
             animation: fundoAnimado 12s ease infinite;
 
             color: #222;
@@ -128,7 +122,6 @@
             padding: 18px 25px;
 
             display: flex;
-
             align-items: center;
             justify-content: space-between;
 
@@ -146,7 +139,6 @@
         .logo {
 
             display: flex;
-
             align-items: center;
 
             gap: 9px;
@@ -156,7 +148,6 @@
             text-decoration: none;
 
             font-size: 24px;
-
             font-weight: 700;
         }
 
@@ -167,7 +158,6 @@
             height: 30px;
 
             display: flex;
-
             align-items: center;
             justify-content: center;
 
@@ -188,7 +178,6 @@
         .menu {
 
             display: flex;
-
             align-items: center;
 
             gap: 35px;
@@ -202,7 +191,6 @@
             text-decoration: none;
 
             font-size: 14px;
-
             font-weight: 600;
 
             transition: 0.2s;
@@ -210,7 +198,6 @@
 
 
         .menu a:hover {
-
             color: #0875c9;
         }
 
@@ -232,7 +219,6 @@
             text-decoration: none;
 
             font-size: 14px;
-
             font-weight: 600;
 
             transition: 0.2s;
@@ -267,7 +253,6 @@
             margin: 0 0 8px;
 
             font-size: 36px;
-
             font-weight: 700;
         }
 
@@ -303,7 +288,6 @@
             display: flex;
 
             align-items: center;
-
             justify-content: space-between;
 
             gap: 20px;
@@ -317,7 +301,6 @@
             margin: 0;
 
             font-size: 21px;
-
             font-weight: 700;
 
             color: #222;
@@ -341,7 +324,6 @@
             color: #0875c9;
 
             font-size: 12px;
-
             font-weight: 700;
         }
 
@@ -363,11 +345,9 @@
             position: relative;
 
             width: 100%;
-
             max-width: 500px;
 
             display: flex;
-
             align-items: center;
         }
 
@@ -411,7 +391,6 @@
 
 
         .search-input::placeholder {
-
             color: #999;
         }
 
@@ -426,79 +405,113 @@
 
 
         /* =====================================
-           GRID DE CARDS
+           TABELA
         ===================================== */
 
-        .products-grid {
+        .table-container {
 
-            display: grid;
+            width: 100%;
 
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 15px;
-        }
-
-
-        /* =====================================
-           ITEM DO PRODUTO
-        ===================================== */
-
-        .produto-item {
-
-            min-width: 0;
-        }
-
-
-        /* =====================================
-           CARD DO PRODUTO
-        ===================================== */
-
-        .product-card {
-
-            background: #ffffff;
+            overflow-x: auto;
 
             border: 1px solid #e2edf4;
 
             border-radius: 12px;
 
-            padding: 14px;
-
             box-shadow:
-                0 3px 10px rgba(0, 0, 0, 0.06);
+                0 3px 10px rgba(0, 0, 0, 0.04);
+        }
+
+
+        .products-table {
+
+            width: 100%;
+
+            min-width: 950px;
+
+            margin: 0;
+
+            border-collapse: separate;
+
+            border-spacing: 0;
+
+            background: white;
+        }
+
+
+        /* CABEÇALHO DA TABELA */
+
+        .products-table thead th {
+
+            padding: 15px 14px;
+
+            background: #f7fbfe;
+
+            color: #555;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            white-space: nowrap;
+
+            border-bottom: 1px solid #dce8ef;
+        }
+
+
+        .products-table thead th:first-child {
+
+            border-top-left-radius: 12px;
+        }
+
+
+        .products-table thead th:last-child {
+
+            border-top-right-radius: 12px;
+        }
+
+
+        /* LINHAS */
+
+        .products-table tbody tr {
 
             transition: 0.2s;
         }
 
 
-        .product-card:hover {
+        .products-table tbody tr:hover {
 
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 6px 15px rgba(0, 0, 0, 0.10);
-
-            border-color: #cfe8f7;
+            background: #f8fcff;
         }
 
 
-        /* =====================================
-           CABEÇALHO DO CARD
-        ===================================== */
+        .products-table tbody td {
 
-        .product-card-header {
+            padding: 14px;
 
-            display: flex;
+            color: #333;
 
-            align-items: center;
+            font-size: 13px;
 
-            gap: 8px;
+            font-weight: 500;
 
-            padding-bottom: 10px;
+            vertical-align: middle;
 
             border-bottom: 1px solid #e8eef2;
         }
 
+
+        .products-table tbody tr:last-child td {
+
+            border-bottom: none;
+        }
+
+
+        /* =====================================
+           PRODUTO
+        ===================================== */
 
         .product-main {
 
@@ -508,7 +521,7 @@
 
             gap: 10px;
 
-            min-width: 0;
+            min-width: 190px;
         }
 
 
@@ -522,6 +535,8 @@
             align-items: center;
             justify-content: center;
 
+            flex-shrink: 0;
+
             border-radius: 8px;
 
             background: #e5f4fd;
@@ -529,18 +544,12 @@
             color: #0875c9;
 
             font-size: 17px;
-
-            flex-shrink: 0;
         }
 
 
-        /* =====================================
-           NOME
-        ===================================== */
-
         .product-name {
 
-            font-size: 16px;
+            font-size: 14px;
 
             font-weight: 700;
 
@@ -551,10 +560,6 @@
             word-break: break-word;
         }
 
-
-        /* =====================================
-           CÓDIGO
-        ===================================== */
 
         .product-code {
 
@@ -568,52 +573,21 @@
            INFORMAÇÕES
         ===================================== */
 
-        .product-info {
+        .table-label {
 
-            display: grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
-            gap: 10px;
-
-            padding: 13px 0;
+            display: none;
         }
 
 
-        .info-item {
-
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 3px;
-
-            min-width: 0;
-        }
-
-
-        .info-label {
-
-            font-size: 10px;
-
-            color: #888;
-
-            font-weight: 700;
-
-            text-transform: uppercase;
-        }
-
-
-        .info-value {
-
-            font-size: 13px;
+        .table-value {
 
             color: #333;
 
+            font-size: 13px;
+
             font-weight: 600;
 
-            word-break: break-word;
+            white-space: nowrap;
         }
 
 
@@ -621,29 +595,17 @@
            OBSERVAÇÃO
         ===================================== */
 
-        .observation {
+        .observation-table {
 
-            padding: 9px;
+            max-width: 180px;
 
-            background: #f7fbfe;
-
-            border-radius: 7px;
-
-            margin-bottom: 11px;
-        }
-
-
-        .observation .info-label {
-
-            margin-bottom: 4px;
-        }
-
-
-        .observation .info-value {
-
-            font-weight: 400;
+            white-space: normal;
 
             line-height: 1.4;
+
+            color: #666;
+
+            font-size: 12px;
         }
 
 
@@ -651,17 +613,13 @@
            AÇÕES
         ===================================== */
 
-        .card-footer {
+        .table-actions {
 
             display: flex;
 
-            justify-content: flex-end;
+            justify-content: center;
 
             gap: 6px;
-
-            padding-top: 10px;
-
-            border-top: 1px solid #e8eef2;
         }
 
 
@@ -685,9 +643,7 @@
         }
 
 
-        /* =====================================
-           EDITAR
-        ===================================== */
+        /* EDITAR */
 
         .btn-edit {
 
@@ -705,9 +661,7 @@
         }
 
 
-        /* =====================================
-           EXCLUIR
-        ===================================== */
+        /* EXCLUIR */
 
         .btn-delete {
 
@@ -879,26 +833,14 @@
            RESPONSIVO
         ===================================== */
 
-        @media (max-width: 1000px) {
-
-            .products-grid {
-
-                grid-template-columns: 1fr;
-            }
-
-        }
-
-
         @media (max-width: 900px) {
 
             .menu {
-
                 display: none;
             }
 
 
             .products-container {
-
                 padding: 20px;
             }
 
@@ -912,7 +854,6 @@
 
 
             .search-box {
-
                 max-width: 100%;
             }
 
@@ -922,37 +863,31 @@
         @media (max-width: 550px) {
 
             .page {
-
                 padding: 15px;
             }
 
 
             .navbar {
-
                 padding: 15px;
             }
 
 
             .logo {
-
                 font-size: 20px;
             }
 
 
             .btn-sair {
-
                 padding: 9px 17px;
             }
 
 
             .page-header {
-
                 margin-top: 25px;
             }
 
 
             .page-header h1 {
-
                 font-size: 30px;
             }
 
@@ -967,29 +902,23 @@
             }
 
 
-            .product-info {
+            .products-top > div {
 
-                grid-template-columns: 1fr;
+                display: flex;
+
+                flex-wrap: wrap;
 
                 gap: 8px;
             }
 
 
-            .product-card {
-
-                padding: 13px;
+            .products-count {
+                margin-left: 0 !important;
             }
 
 
-            .product-name {
-
-                font-size: 16px;
-            }
-
-
-            .info-value {
-
-                font-size: 13px;
+            .btn-cadastrar {
+                padding: 9px 12px;
             }
 
 
@@ -1138,208 +1067,201 @@
 
 
             <!-- =====================================
-                 CARDS
+                 TABELA
             ====================================== -->
 
-            <div class="products-grid">
+            <div class="table-container">
+
+                <table class="products-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Produto</th>
+
+                            <th>Categoria</th>
+
+                            <th>Marca</th>
+
+                            <th>Unidade</th>
+
+                            <th>Validade</th>
+
+                            <th>Fornecedor</th>
+
+                            <th>Observação</th>
+
+                            <th class="text-center">Ações</th>
+
+                        </tr>
+
+                    </thead>
 
 
-                @foreach($produtos as $produto)
+                    <tbody id="tabelaProdutos">
 
 
-                    <div class="produto-item">
+                        @foreach($produtos as $produto)
+
+                            <tr class="produto-item">
 
 
-                        <div class="product-card">
+                                <!-- PRODUTO -->
 
+                                <td>
 
-                            <!-- CABEÇALHO -->
+                                    <div class="product-main">
 
-                            <div class="product-card-header">
+                                        <div class="product-icon">
 
-                                <div class="product-main">
-
-
-                                    <div class="product-icon">
-
-                                        <i class="bi bi-box-seam"></i>
-
-                                    </div>
-
-
-                                    <div>
-
-                                        <div class="product-name">
-
-                                            {{ $produto->nome_produto }}
+                                            <i class="bi bi-box-seam"></i>
 
                                         </div>
 
 
-                                        <div class="product-code">
+                                        <div>
 
-                                            Código:
+                                            <div class="product-name">
 
-                                            {{ $produto->codigo_produto }}
+                                                {{ $produto->nome_produto }}
+
+                                            </div>
+
+
+                                            <div class="product-code">
+
+                                                Código:
+                                                {{ $produto->codigo_produto }}
+
+                                            </div>
 
                                         </div>
 
                                     </div>
 
-
-                                </div>
-
-                            </div>
-
-
-                            <!-- INFORMAÇÕES -->
-
-                            <div class="product-info">
+                                </td>
 
 
                                 <!-- CATEGORIA -->
 
-                                <div class="info-item">
+                                <td>
 
-                                    <span class="info-label">
-                                        Categoria
-                                    </span>
-
-                                    <span class="info-value">
+                                    <span class="table-value">
 
                                         {{ $produto->categoria }}
 
                                     </span>
 
-                                </div>
+                                </td>
 
 
                                 <!-- MARCA -->
 
-                                <div class="info-item">
+                                <td>
 
-                                    <span class="info-label">
-                                        Marca
-                                    </span>
-
-                                    <span class="info-value">
+                                    <span class="table-value">
 
                                         {{ $produto->marca ?? 'Não informada' }}
 
                                     </span>
 
-                                </div>
+                                </td>
 
 
                                 <!-- UNIDADE -->
 
-                                <div class="info-item">
+                                <td>
 
-                                    <span class="info-label">
-                                        Unidade
-                                    </span>
-
-                                    <span class="info-value">
+                                    <span class="table-value">
 
                                         {{ $produto->unidade }}
 
                                     </span>
 
-                                </div>
+                                </td>
 
 
                                 <!-- VALIDADE -->
 
-                                <div class="info-item">
+                                <td>
 
-                                    <span class="info-label">
-                                        Data de validade
-                                    </span>
-
-                                    <span class="info-value">
+                                    <span class="table-value">
 
                                         {{ $produto->data_validade ?? 'Não informada' }}
 
                                     </span>
 
-                                </div>
+                                </td>
 
 
                                 <!-- FORNECEDOR -->
 
-                                <div class="info-item">
+                                <td>
 
-                                    <span class="info-label">
-                                        Fornecedor
-                                    </span>
-
-                                    <span class="info-value">
+                                    <span class="table-value">
 
                                         {{ $produto->fornecedor ?? 'Não informado' }}
 
                                     </span>
 
-                                </div>
+                                </td>
 
 
-                            </div>
+                                <!-- OBSERVAÇÃO -->
+
+                                <td>
+
+                                    <div class="observation-table">
+
+                                        {{ $produto->observacao ?? 'Nenhuma observação' }}
+
+                                    </div>
+
+                                </td>
 
 
-                            <!-- OBSERVAÇÃO -->
+                                <!-- AÇÕES -->
 
-                            <div class="observation">
+                                <td>
 
-                                <div class="info-label">
-                                    Observação
-                                </div>
-
-                                <div class="info-value">
-
-                                    {{ $produto->observacao ?? 'Nenhuma observação' }}
-
-                                </div>
-
-                            </div>
+                                    <div class="table-actions">
 
 
-                            <!-- AÇÕES -->
+                                        <a
+                                            href="/editar_produto/{{ $produto->id }}"
+                                            class="btn-action btn-edit"
+                                            title="Editar"
+                                        >
 
-                            <div class="card-footer">
+                                            <i class="bi bi-pencil"></i>
 
-
-                                <a
-                                    href="/editar_produto/{{ $produto->id }}"
-                                    class="btn-action btn-edit"
-                                    title="Editar"
-                                >
-
-                                    <i class="bi bi-pencil"></i>
-
-                                </a>
+                                        </a>
 
 
-                                <a
-                                    href="/excluir_produto/{{ $produto->id }}"
-                                    class="btn-action btn-delete"
-                                    title="Excluir"
-                                >
+                                        <a
+                                            href="/excluir_produto/{{ $produto->id }}"
+                                            class="btn-action btn-delete"
+                                            title="Excluir"
+                                        >
 
-                                    <i class="bi bi-trash"></i>
+                                            <i class="bi bi-trash"></i>
 
-                                </a>
+                                        </a>
 
+                                    </div>
 
-                            </div>
-
-
-                        </div>
+                                </td>
 
 
-                    </div>
+                            </tr>
+
+                        @endforeach
 
 
-                @endforeach
+                    </tbody>
 
+                </table>
 
             </div>
 
@@ -1423,6 +1345,8 @@
 
 </div>
 
+
 </body>
 
 </html>
+```

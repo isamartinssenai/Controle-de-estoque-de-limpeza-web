@@ -12,6 +12,7 @@ export default defineConfig({
                 'resources/js/login.js',
                 'resources/js/cadastro_estoque.js',
                 'resources/js/produto.js',
+                'resources/js/luzes.js',
             ],
             refresh: true,
             fonts: [

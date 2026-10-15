@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('estoque', function (Blueprint $table) {
-            //
+        Schema::create('sensors', function (Blueprint $table) {
+            $table->id();
+            $table->string('sensor');
+            $table->decimal('temperatura',5,2);
+            $table->decimal('umidade',5,2);
+            $table->timestamps();
         });
     }
 
@@ -21,8 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('estoque', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('sensors');
     }
 };
